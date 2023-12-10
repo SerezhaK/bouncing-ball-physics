@@ -13,7 +13,7 @@ class Ball:
             self,
             coefficient_k,
             coefficient_e,
-            speed_angular_w=10,
+            speed_angular_w=-10,
             speed_x_u=0.09,
             speed_y_v=0.1,
             radius=0.08,
@@ -93,7 +93,7 @@ class Animator:
 
         # set up the figure
         self.fig, self.ax = plt.subplots()
-        self.ax.set_xlim(-50, 50)
+        self.ax.set_xlim(-1, 1)
         self.ax.set_ylim(0, 40)
 
         # prepare a text window for the timer
@@ -142,14 +142,21 @@ class Animator:
         )
 
 
+# For user settings
 ball = Ball(
-    dt=0.01,
-    coefficient_e=0.6,
-    coefficient_k=0.4
+    coefficient_k=-1,
+    coefficient_e=0.9,
+    # speed_angular_w=-30,
+    # speed_x_u=0.009,
+    # speed_y_v=0.01,
+    # radius=0.08,
 )
 animator = Animator(
     ball=ball,
     draw_trace=True
 )
 animator.animate()
+matplotlib.pyplot.grid()
+plt.axhline(y=0, color='grey', linestyle='--', label='floor')
+plt.legend()
 plt.show()
