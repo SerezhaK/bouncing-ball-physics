@@ -1,11 +1,11 @@
 import matplotlib
+import matplotlib.animation as animation
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy as sp
+from scipy import linalg
 
 matplotlib.use('TkAgg')  # 'tkAgg' if Qt not present
-import matplotlib.pyplot as plt
-import scipy as sp
-import matplotlib.animation as animation
-import numpy as np
-from scipy import linalg
 
 
 class Ball:
@@ -67,11 +67,6 @@ class Ball:
         return sp.array([[self.x_cord, self.y_cord]])
 
     def evolve(self):
-        radius = self.radius
-        angular = self.speed_angular_w
-        x_speed = self.speed_x_u
-        k_koef = self.coefficient_k
-        e_koef = self.coefficient_e
         g = self.g
 
         self.speed_y_v -= g / 1000
