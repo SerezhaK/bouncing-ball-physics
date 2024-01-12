@@ -6,7 +6,6 @@ import scipy as sp
 from scipy import linalg
 
 matplotlib.use('TkAgg')  # 'tkAgg' if Qt not present
-print("idi na hui")
 
 class Ball:
     def __init__(
