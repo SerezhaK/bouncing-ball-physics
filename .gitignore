@@ -710,7 +710,7 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
+*.soxx
 
 # Distribution / packaging
 .Python
